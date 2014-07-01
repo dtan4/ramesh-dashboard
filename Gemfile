@@ -27,5 +27,5 @@ group :development do
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
+  gem 'terminal-notifier-guard'
 end
