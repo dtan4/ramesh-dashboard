@@ -1,5 +1,7 @@
 # README
-
+[![Build Status](https://travis-ci.org/dtan4/ramesh_dashboard.svg)](https://travis-ci.org/dtan4/ramesh_dashboard)
+[![Coverage Status](https://img.shields.io/coveralls/dtan4/ramesh_dashboard.svg)](https://coveralls.io/r/dtan4/ramesh_dashboard)
+[![Dependency Status](https://gemnasium.com/dtan4/ramesh_dashboard.svg)](https://gemnasium.com/dtan4/ramesh_dashboard)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
