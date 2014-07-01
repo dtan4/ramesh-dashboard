@@ -10,6 +10,7 @@ describe RameshImage do
   end
 
   it "shuold validate uniqueness of image_datetime" do
+    create(:ramesh_image)
     expect(subject).to validate_uniqueness_of :image_datetime
   end
 end

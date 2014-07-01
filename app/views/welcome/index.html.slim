@@ -1,2 +1,5 @@
 .page-header
   h1 Ramesh Dashboard
+
+- @images.each do |image|
+  = image_tag image.ramesh_image_url, class: "img-responsive", alt: image.image_datetime

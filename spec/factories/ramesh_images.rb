@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :ramesh_image do
-    ramesh_image "MyString"
-    image_datetime "2014-07-01 16:46:11"
+    ramesh_image { fixture_file_upload(File.join(File.dirname(__FILE__), "files", "example.jpg"), "image/jpeg") }
+    sequence(:image_datetime) { |i| Time.now - i.day }
   end
 end
