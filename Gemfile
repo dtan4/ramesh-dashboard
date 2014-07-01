@@ -20,7 +20,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do
