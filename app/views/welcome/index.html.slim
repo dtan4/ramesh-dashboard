@@ -6,4 +6,8 @@
     .row
       - images_row.each do |image|
         .col-md-4
-          = image_tag image.ramesh_image_url, class: "img-responsive center-block", alt: image.image_datetime
+          .thumbnail
+            = image_tag image.ramesh_image.thumb.url, class: "img-responsive center-block", alt: image.image_datetime
+            .caption
+              h4
+                = image.image_datetime.strftime("%Y/%m/%d %H:%M:%S")

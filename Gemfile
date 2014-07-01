@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'jquery-rails'
 gem 'turbolinks'
