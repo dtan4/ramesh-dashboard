@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe RameshImage, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe RameshImage do
+  it "shuold validate presence of ramesh_image" do
+    expect(subject).to validate_presence_of :ramesh_image
+  end
+
+  it "shuold validate presence of image_datetime" do
+    expect(subject).to validate_presence_of :image_datetime
+  end
 end
