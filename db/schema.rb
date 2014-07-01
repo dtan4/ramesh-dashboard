@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701074611) do
+ActiveRecord::Schema.define(version: 20140701130955) do
 
   create_table "ramesh_images", force: true do |t|
     t.string   "ramesh_image",   null: false
@@ -20,6 +20,6 @@ ActiveRecord::Schema.define(version: 20140701074611) do
     t.datetime "updated_at"
   end
 
-  add_index "ramesh_images", ["image_datetime"], name: "index_ramesh_images_on_image_datetime"
+  add_index "ramesh_images", ["image_datetime"], name: "index_ramesh_images_on_image_datetime", unique: true
 
 end
