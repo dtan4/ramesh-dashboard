@@ -1,5 +1,9 @@
 .page-header
   h1 Ramesh Dashboard
 
-- @images.each do |image|
-  = image_tag image.ramesh_image_url, class: "img-responsive", alt: image.image_datetime
+.text-center
+  - @images.each_slice(3) do |images_row|
+    .row
+      - images_row.each do |image|
+        .col-md-4
+          = image_tag image.ramesh_image_url, class: "img-responsive center-block", alt: image.image_datetime
