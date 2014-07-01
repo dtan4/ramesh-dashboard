@@ -8,4 +8,8 @@ describe RameshImage do
   it "shuold validate presence of image_datetime" do
     expect(subject).to validate_presence_of :image_datetime
   end
+
+  it "shuold validate uniqueness of image_datetime" do
+    expect(subject).to validate_uniqueness_of :image_datetime
+  end
 end
