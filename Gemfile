@@ -28,7 +28,9 @@ end
 
 group :development do
   gem 'guard-rspec'
+  gem 'guard-rails_best_practices'
   gem 'pry-rails'
+  gem 'rails_best_practices'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'terminal-notifier-guard'
