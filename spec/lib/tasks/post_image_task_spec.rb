@@ -28,6 +28,11 @@ describe Tasks::PostImageTask do
       end.to change(RameshImage, :count).by(1)
     end
 
+    it "should post image with YYYYmmddHHMM format" do
+      execute
+      expect(RameshImage.last.ramesh_image_url).to match /201407060000\.jpg\z/
+    end
+
     after do
       Timecop.return
     end
