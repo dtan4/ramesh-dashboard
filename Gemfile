@@ -21,6 +21,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'ramesh', '~> 1.3.0'
 
+gem 'whenever', require: false
+
 group :development, :test do
   gem 'coveralls', require: false
   gem 'rspec-rails', '~> 3.0.0'
