@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '4.1.2'
+gem 'rails', '4.1.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -34,6 +34,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.2.0'
   gem 'guard-rspec'
   gem 'guard-rails_best_practices'
   gem 'pry-rails'
