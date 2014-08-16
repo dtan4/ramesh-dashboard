@@ -3,8 +3,6 @@
 class RameshImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  storage :file
-
   def filename
     # YYYYmmddHHMM.jpg
     if /\A(?<date>\d{12}).*(?<ext>\.\w+)\z/ =~ original_filename
