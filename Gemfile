@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
@@ -43,4 +42,9 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'terminal-notifier-guard'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
