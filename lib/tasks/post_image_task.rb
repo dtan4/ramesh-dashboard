@@ -9,7 +9,10 @@ class Tasks::PostImageTask
       download_image(image_name, File.dirname(tmpfile), File.basename(tmpfile))
       image = RameshImage.create(image_datetime: Time.parse(image_name))
       image.ramesh_image = File.new(tmpfile.path)
-      image.save!
+
+      unless image.save
+        raise RuntimeError, image.errors.full_messages
+      end
     rescue
       tmpfile.close! if File.exists?(tmpfile)
       raise
