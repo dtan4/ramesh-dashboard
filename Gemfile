@@ -22,6 +22,11 @@ gem 'ramesh', '~> 1.3.0'
 
 gem 'whenever', require: false
 
+group :test do
+  gem 'timecop'
+  gem 'webmock'
+end
+
 group :development, :test do
   gem 'coveralls', require: false
   gem 'database_rewinder'
@@ -29,8 +34,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
   gem 'sqlite3'
-  gem 'timecop'
-  gem 'webmock'
 end
 
 group :development do
