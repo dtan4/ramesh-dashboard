@@ -33,3 +33,5 @@ class Tasks::PostImageTask
     end
   end
 end
+
+Tasks::PostImageTask.execute
