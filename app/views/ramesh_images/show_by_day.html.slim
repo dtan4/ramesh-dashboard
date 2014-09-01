@@ -1,0 +1,18 @@
+.page-header
+  h1
+    = @day.strftime("%Y-%m-%d")
+
+- @images.each do |image_hour, hour_images|
+  h2
+    = image_hour
+  .text-center
+    - hour_images.each_slice(3) do |images_row|
+      .row
+        - images_row.each do |image|
+          .col-md-4
+            .thumbnail
+              = link_to image_tag(image.ramesh_image.thumb.url, class: "img-responsive center-block", alt: image.image_datetime), show_image_path(image_datetime: image.image_datetime.strftime("%Y%m%d%H%M"))
+              .caption
+                h4
+                  = image.image_datetime.strftime("%Y/%m/%d %H:%M")
+    hr
