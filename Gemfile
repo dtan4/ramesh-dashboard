@@ -50,6 +50,7 @@ end
 group :production do
   ruby "2.1.2"
 
+  gem 'newrelic_rpm'
   gem 'pg'
   gem 'rails_12factor'
 end
