@@ -7,11 +7,10 @@ task :post_recent_images => :environment do
 
     tmpfile = Tempfile.open(%W(#{image_name} .jpg))
     begin
-      download_image(image_name, File.dirname(tmpfile), File.basename(tmpfile))
       image_datetime = Time.parse(image_name)
-
       next if RameshImage.find_by(image_datetime: image_datetime)
 
+      download_image(image_name, File.dirname(tmpfile), File.basename(tmpfile))
       image = RameshImage.create(image_datetime: image_datetime)
       image.ramesh_image = File.new(tmpfile.path)
 
