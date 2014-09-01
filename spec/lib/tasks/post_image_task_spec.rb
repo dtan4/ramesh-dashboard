@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Tasks::PostImageTask do
+pending Tasks::PostImageTask do
   describe "#execute" do
     let(:execute) do
       described_class.execute
