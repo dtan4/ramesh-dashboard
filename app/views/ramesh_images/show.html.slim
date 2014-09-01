@@ -17,3 +17,8 @@ br
       = link_to button_tag(">", class: "btn btn-lg btn-primary"), show_image_path(image_datetime: @image.previous_image.image_datetime.strftime("%Y%m%d%H%M"))
     - else
       = button_tag ">", class: "btn btn-lg", disabled: "disabled"
+
+hr
+
+.text-right
+  = link_to "Back to Index", root_path
