@@ -41,6 +41,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rails_best_practices'
   gem 'pry-rails'
+  gem 'quiet_assets'
   gem 'rails_best_practices'
   gem 'spring'
   gem 'spring-commands-rspec'
