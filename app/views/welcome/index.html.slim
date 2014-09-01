@@ -1,13 +1,16 @@
 .page-header
   h1 Ramesh Dashboard
 
-.text-center
-  - @images.each_slice(3) do |images_row|
-    .row
-      - images_row.each do |image|
-        .col-md-4
-          .thumbnail
-            = image_tag image.ramesh_image.thumb.url, class: "img-responsive center-block", alt: image.image_datetime
-            .caption
-              h4
-                = image.image_datetime.strftime("%Y/%m/%d %H:%M:%S")
+- @images.each do |image_date, day_images|
+  h2
+    = image_date
+  .text-center
+    - day_images.each_slice(3) do |images_row|
+      .row
+        - images_row.each do |image|
+          .col-md-4
+            .thumbnail
+              = image_tag image.ramesh_image.thumb.url, class: "img-responsive center-block", alt: image.image_datetime
+              .caption
+                h4
+                  = image.image_datetime.strftime("%Y/%m/%d %H:%M:%S")
