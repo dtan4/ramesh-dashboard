@@ -2,3 +2,18 @@
   h1
     = @image.image_datetime.strftime("%Y-%m-%d %H:%M")
 = image_tag @image.ramesh_image.url, class: "img-responsive center-block", alt: @image.image_datetime
+
+br
+
+.navigation
+  .col-sm-6.text-right
+    - if @image.next_image
+      = link_to button_tag("<", class: "btn btn-lg btn-primary"), show_image_path(image_datetime: @image.next_image.image_datetime.strftime("%Y%m%d%H%M"))
+    - else
+      = button_tag "<", class: "btn btn-lg", disabled: "disabled"
+
+  .col-sm-6.text-left
+    - if @image.previous_image
+      = link_to button_tag(">", class: "btn btn-lg btn-primary"), show_image_path(image_datetime: @image.previous_image.image_datetime.strftime("%Y%m%d%H%M"))
+    - else
+      = button_tag ">", class: "btn btn-lg", disabled: "disabled"
