@@ -5,26 +5,34 @@ require "time"
 class Tasks::PostImageTask
   class << self
     def execute
-      tmpfile = Tempfile.open(%W(#{image_name} .jpg))
-      download_image(image_name, File.dirname(tmpfile), File.basename(tmpfile))
-      image = RameshImage.create(image_datetime: Time.parse(image_name))
-      image.ramesh_image = File.new(tmpfile.path)
+      time_origin = Time.now
 
-      unless image.save
-        raise RuntimeError, image.errors.full_messages
+      [5, 10, 15].each do |minutes_ago|
+        image_name = image_name_of(time_origin, minutes_ago)
+
+        tmpfile = Tempfile.open(%W(#{image_name} .jpg))
+        begin
+          download_image(image_name, File.dirname(tmpfile), File.basename(tmpfile))
+          image_datetime = Time.parse(image_name)
+
+          next if RameshImage.find_by(image_datetime: image_datetime)
+
+          image = RameshImage.create(image_datetime: image_datetime)
+          image.ramesh_image = File.new(tmpfile.path)
+
+          raise RuntimeError, image.errors.full_messages unless image.save
+        rescue
+          tmpfile.close! if File.exists?(tmpfile)
+          raise
+        end
       end
-    rescue
-      tmpfile.close! if File.exists?(tmpfile)
-      raise
     end
 
     private
 
-    def image_name
-      return @image_name if @image_name
-
-      five_minutes_ago = (Time.now - 5.minutes).strftime("%Y%m%d%H%M").to_i
-      @image_name = (five_minutes_ago - five_minutes_ago % 5).to_s
+    def image_name_of(time_origin, minutes_ago)
+      n_minutes_ago = (time_origin - minutes_ago.minutes).strftime("%Y%m%d%H%M").to_i
+      @image_name = (n_minutes_ago - n_minutes_ago % 5).to_s
     end
 
     def download_image(image_name, dir, filename)
