@@ -3,7 +3,7 @@
 
 - @images.each do |image_date, day_images|
   h2
-    = image_date
+    = link_to image_date, show_image_path(image_datetime: Time.parse(image_date).strftime("%Y%m%d"))
   .text-center
     - day_images.each_slice(3) do |images_row|
       .row
