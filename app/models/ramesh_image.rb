@@ -7,4 +7,8 @@ class RameshImage < ActiveRecord::Base
   def next_image
     RameshImage.find_by(image_datetime: self.image_datetime + 5.minutes)
   end
+
+  def previous_image
+    RameshImage.find_by(image_datetime: self.image_datetime - 5.minutes)
+  end
 end
