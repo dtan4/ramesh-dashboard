@@ -13,4 +13,25 @@ describe RameshImage do
     create(:ramesh_image)
     expect(subject).to validate_uniqueness_of :image_datetime
   end
+
+  describe "#next_image" do
+    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: DateTime.new(2014, 9, 1, 23, 0, 0)) }
+
+    context "if next image exists" do
+      before do
+        FactoryGirl.create(:ramesh_image, image_datetime: image.image_datetime + 5.minutes)
+      end
+
+      it "should return next image" do
+        expect(image.next_image).to be_a RameshImage
+        expect(image.next_image.image_datetime).to eq image.image_datetime + 5.minutes
+      end
+    end
+
+    context "if next image does not exist" do
+      it "should return nil" do
+        expect(image.next_image).to be_nil
+      end
+    end
+  end
 end
