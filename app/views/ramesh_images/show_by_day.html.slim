@@ -2,6 +2,9 @@
   h1
     = @day.strftime("%Y-%m-%d")
 
+.original-image
+  img#ImageAtTime
+
 - @images.each do |image_hour, hour_images|
   h2
     = image_hour
@@ -16,3 +19,6 @@
                 h4
                   = image.image_datetime.strftime("%Y/%m/%d %H:%M")
     hr
+
+.text-right
+  = link_to "Back to Index", root_path

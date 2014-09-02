@@ -2,7 +2,9 @@
   h1
     = link_to @image.image_datetime.strftime("%Y-%m-%d"), show_image_path(image_datetime: @image.image_datetime.strftime("%Y%m%d"))
     = " #{@image.image_datetime.strftime("%H:%M")}"
-= image_tag @image.ramesh_image.url, class: "img-responsive center-block", alt: @image.image_datetime
+
+.original-image
+  = image_tag @image.ramesh_image.url, class: "img-responsive center-block", alt: @image.image_datetime
 
 br
 
