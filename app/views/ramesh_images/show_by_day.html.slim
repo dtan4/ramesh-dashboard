@@ -2,10 +2,13 @@
   h1
     = @day.strftime("%Y-%m-%d")
 
-.original-image
-  img#ImageAtTime
+.center-block
+  input#dayStr type="hidden" value="#{@day.strftime('%Y%m%d')}"
+  = image_tag @images.first.ramesh_image.url, id: "imageAtTime", class: "img-responsive"
+  br
+  input#framePosition type="range" max="#{@images.length - 1}" min="0" step="1" value="0"
 
-- @images.each do |image_hour, hour_images|
+- @images.group_by { |image| image.image_datetime.hour }.each do |image_hour, hour_images|
   h2
     = image_hour
   .text-center

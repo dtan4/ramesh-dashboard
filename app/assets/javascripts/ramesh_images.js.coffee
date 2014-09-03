@@ -1,3 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  image_url_list = []
+  day = $('#dayStr').val()
+  framePosition = $('#framePosition')
+
+  $.get '/images/list', { image_date: day }, (data) ->
+    return if data.error
+    image_url_list = data.image_url_list
+
+  framePosition.change ->
+    $('#imageAtTime').attr 'src', image_url_list[Number.parseInt framePosition.val()]

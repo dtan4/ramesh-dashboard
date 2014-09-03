@@ -27,7 +27,7 @@ describe RameshImagesController, :type => :controller do
       it "assigns images" do
         show
         images = assigns(:images)
-        expect(images.length).to eq 1
+        expect(images.length).to eq 2
       end
     end
 
@@ -49,6 +49,21 @@ describe RameshImagesController, :type => :controller do
         expect(image).to be_a RameshImage
         expect(image.image_datetime).to eq Time.parse(image_datetime)
       end
+    end
+  end
+
+  describe "GET list" do
+    let(:image_date) { "20140901"}
+    let(:list)       { get :list, image_date: image_date }
+    let!(:image01)    { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 0)) }
+    let!(:image02)    { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 5)) }
+
+    it "should return JSON array" do
+      list
+      expect(response.body).to eq({
+        error:           false,
+        image_url_list: [image01.ramesh_image.url, image02.ramesh_image.url]
+      }.to_json)
     end
   end
 end
