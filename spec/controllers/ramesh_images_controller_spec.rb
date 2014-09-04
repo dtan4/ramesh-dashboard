@@ -53,8 +53,8 @@ describe RameshImagesController, :type => :controller do
   end
 
   describe "GET list" do
-    let(:image_date) { "20140901"}
-    let(:list)       { get :list, image_date: image_date }
+    let(:image_date)  { "20140901"}
+    let(:list)        { get :list, image_date: image_date }
     let!(:image01)    { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 0)) }
     let!(:image02)    { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 5)) }
 
@@ -62,7 +62,10 @@ describe RameshImagesController, :type => :controller do
       list
       expect(response.body).to eq({
         error:           false,
-        image_url_list: [image01.ramesh_image.url, image02.ramesh_image.url]
+        image_list: [
+          { url: image01.ramesh_image.url, time: image01.image_datetime.strftime("%H:%M") },
+          { url: image02.ramesh_image.url, time: image02.image_datetime.strftime("%H:%M") }
+        ]
       }.to_json)
     end
   end

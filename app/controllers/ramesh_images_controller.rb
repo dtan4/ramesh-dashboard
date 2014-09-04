@@ -18,9 +18,14 @@ class RameshImagesController < ApplicationController
     image_url_list = RameshImage
       .where(image_datetime: day.beginning_of_day..day.end_of_day)
       .order(image_datetime: :asc)
-      .map { |image| image.ramesh_image.url }
+      .map do |image|
+      {
+        url: image.ramesh_image.url,
+        time: image.image_datetime.strftime("%H:%M")
+      }
+    end
 
-    render json: { error: false, image_url_list: image_url_list }
+    render json: { error: false, image_list: image_url_list }
   rescue Exception => e
     render json: { error: true, message: e.message }
   end
