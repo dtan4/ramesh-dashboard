@@ -21,7 +21,7 @@ class RameshImagesController < ApplicationController
       .map do |image|
       {
         url: image.ramesh_image.url,
-        time: image.image_datetime.strftime("%H:%M")
+        time: image.strftime("%H:%M")
       }
     end
 

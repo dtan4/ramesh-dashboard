@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
     origin = Time.now
 
     @images = RameshImage.where(image_datetime: (origin - 2.hours)..origin).order(image_datetime: :desc)
-    @image_datetimes = RameshImage.all.order(image_datetime: :desc).group_by { |image| image.image_datetime.strftime("%Y-%m-%d") }.keys
+    @image_datetimes = RameshImage.all.order(image_datetime: :desc).group_by { |image| image.strftime("%Y-%m-%d") }.keys
   end
 end

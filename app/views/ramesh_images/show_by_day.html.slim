@@ -9,7 +9,7 @@ input#dayStr type="hidden" value="#{@day.strftime('%Y%m%d')}"
   .position
     span.glyphicon.glyphicon-dashboard
     span#positionTime
-      = @images.last.image_datetime.strftime("%H:%M")
+      = @images.last.strftime("%H:%M")
     span#positionAt 1
     span#positionAtLabel
       = " / #{@images.length}"
@@ -24,10 +24,10 @@ input#dayStr type="hidden" value="#{@day.strftime('%Y%m%d')}"
         - images_row.each do |image|
           .col-md-4
             .thumbnail
-              = link_to image_tag(image.ramesh_image.thumb.url, class: "img-responsive center-block", alt: image.image_datetime), show_image_path(image_datetime: image.image_datetime.strftime("%Y%m%d%H%M"))
+              = link_to image_tag(image.ramesh_image.thumb.url, class: "img-responsive center-block", alt: image.image_datetime), show_image_path(image_datetime: image.strftime("%Y%m%d%H%M"))
               .caption
                 h4
-                  = image.image_datetime.strftime("%H:%M")
+                  = image.strftime("%H:%M")
     hr
 
 .text-right

@@ -63,8 +63,8 @@ describe RameshImagesController, :type => :controller do
       expect(response.body).to eq({
         error:           false,
         image_list: [
-          { url: image01.ramesh_image.url, time: image01.image_datetime.strftime("%H:%M") },
-          { url: image02.ramesh_image.url, time: image02.image_datetime.strftime("%H:%M") }
+          { url: image01.ramesh_image.url, time: image01.strftime("%H:%M") },
+          { url: image02.ramesh_image.url, time: image02.strftime("%H:%M") }
         ]
       }.to_json)
     end
