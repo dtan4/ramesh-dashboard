@@ -19,8 +19,14 @@ input#dayStr type="hidden" value="#{@day.strftime('%Y%m%d')}"
 
       input#framePosition type="range" max="#{@images.length - 1}" min="0" step="1" value="0"
 
+      button#toStartButton.btn.btn-primary
+        span.glyphicon.glyphicon-step-backward
       button#playButton.btn.btn-primary
         span.glyphicon.glyphicon-play
+      button#forwardButton.btn.btn-primary
+        span.glyphicon.glyphicon-forward
+      button#toEndButton.btn.btn-primary
+        span.glyphicon.glyphicon-step-forward
 
 - @images.group_by { |image| image.image_datetime.hour }.each do |image_hour, hour_images|
   h2
