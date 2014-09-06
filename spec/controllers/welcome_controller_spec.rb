@@ -22,6 +22,11 @@ describe WelcomeController do
       expect(assigns(:images).length).to eq 2
     end
 
+    it "should assign image_datetimes" do
+      index
+      expect(assigns(:image_datetimes)).to eql ["2014-09-01"]
+    end
+
     after do
       Timecop.return
     end
