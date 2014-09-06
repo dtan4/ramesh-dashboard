@@ -6,14 +6,21 @@ input#dayStr type="hidden" value="#{@day.strftime('%Y%m%d')}"
 = image_tag @images.last.ramesh_image.url, id: "imageAtTime", class: "img-responsive center-block"
 
 .text-center
-  .position
-    span.glyphicon.glyphicon-dashboard
-    span#positionTime
-      = @images.last.strftime("%H:%M")
-    span#positionAt 1
-    span#positionAtLabel
-      = " / #{@images.length}"
-  input#framePosition type="range" max="#{@images.length - 1}" min="0" step="1" value="0"
+  br
+  .panel.panel-primary
+    .panel-body
+      span.position
+        span.glyphicon.glyphicon-dashboard
+        span#positionTime
+          = @images.last.strftime("%H:%M")
+        span#positionAt 1
+        span#positionAtLabel
+          = " / #{@images.length}"
+
+      input#framePosition type="range" max="#{@images.length - 1}" min="0" step="1" value="0"
+
+      button#playButton.btn.btn-primary
+        span.glyphicon.glyphicon-play
 
 - @images.group_by { |image| image.image_datetime.hour }.each do |image_hour, hour_images|
   h2
