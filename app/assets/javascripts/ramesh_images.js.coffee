@@ -34,4 +34,4 @@ $ ->
 
   playButton.click ->
     playButton.attr 'disabled', true
-    play 0, 1000
+    play currentPosition(), 1000
