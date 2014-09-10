@@ -5,6 +5,7 @@ $ ->
   framePosition = $('#framePosition')
   playButton = $('#playButton')
   forwardButton = $('#forwardButton')
+  fastForwardButton = $('#fastForwardButton')
   toStartButton = $('#toStartButton')
   toEndButton = $('#toEndButton')
 
@@ -48,6 +49,10 @@ $ ->
   forwardButton.click ->
     playButton.attr 'disabled', true
     play currentPosition(), 500
+
+  fastForwardButton.click ->
+    playButton.attr 'disabled', true
+    play currentPosition(), 250
 
   toStartButton.click -> moveToPosition 0
   toEndButton.click -> moveToPosition imageCount() - 1
