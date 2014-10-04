@@ -53,20 +53,32 @@ describe RameshImagesController, :type => :controller do
   end
 
   describe "GET list" do
-    let(:image_date)  { "20140901"}
-    let(:list)        { get :list, image_date: image_date }
-    let!(:image01)    { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 0)) }
-    let!(:image02)    { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 5)) }
+    let(:list)     { get :list, image_date: image_date }
+    let!(:image01) { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 0)) }
+    let!(:image02) { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 5)) }
 
-    it "should return JSON array" do
-      list
-      expect(response.body).to eq({
-        error:           false,
-        image_list: [
+    context "when valid parameter is given" do
+      let(:image_date)  { "20140901" }
+
+      it "should return error:false and image_list" do
+        list
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:error]).to be false
+        expect(json[:image_list]).to eql [
           { url: image01.ramesh_image.url, time: image01.strftime("%H:%M") },
           { url: image02.ramesh_image.url, time: image02.strftime("%H:%M") }
         ]
-      }.to_json)
+      end
+    end
+
+    context "when invalid parameter is given" do
+      let(:image_date)  { "hoge" }
+
+      it "should return error:true" do
+        list
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:error]).to be true
+      end
     end
   end
 end
