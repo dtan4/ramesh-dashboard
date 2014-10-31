@@ -50,7 +50,7 @@ group :development do
 end
 
 group :production do
-  ruby "2.1.3"
+  ruby "2.1.4"
 
   gem 'newrelic_rpm'
   gem 'pg'
