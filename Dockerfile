@@ -1,4 +1,4 @@
-FROM ruby:2.1.4
+FROM ruby:2.1.5
 
 RUN bundle config --global frozen 1
 
