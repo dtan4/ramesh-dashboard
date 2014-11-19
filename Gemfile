@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.1.5"
+
 gem 'rails', '4.1.7'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -50,8 +52,6 @@ group :development do
 end
 
 group :production do
-  ruby "2.1.4"
-
   gem 'newrelic_rpm'
   gem 'pg'
   gem 'rails_12factor'
