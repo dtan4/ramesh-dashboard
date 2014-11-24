@@ -31,7 +31,7 @@ end
 group :development, :test do
   gem 'coveralls', require: false
   gem 'database_rewinder'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.1.0'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
   gem 'sqlite3'
