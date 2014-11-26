@@ -1,5 +1,5 @@
 language: ruby
 rvm:
   - 2.1.5
-bundler_args: -j 2
-script: bundle exec rspec
+before_script: bundle exec rake db:migrate
+script: bundle exec rake spec
