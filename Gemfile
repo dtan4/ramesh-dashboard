@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'sqlite3'
+
 gem 'ramesh', '~> 1.3.0'
 
 gem 'whenever', require: false
@@ -34,7 +36,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
-  gem 'sqlite3'
 end
 
 group :development do
