@@ -43,7 +43,6 @@ group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.2.0'
   gem 'guard-rspec'
-  gem 'guard-rails_best_practices'
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'rails_best_practices'
