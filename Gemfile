@@ -41,7 +41,6 @@ end
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'capistrano', '~> 3.2.0'
   gem 'guard-rspec'
   gem 'pry-rails'
   gem 'quiet_assets'

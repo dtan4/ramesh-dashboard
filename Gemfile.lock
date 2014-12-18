@@ -42,10 +42,6 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
-    capistrano (3.2.1)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (~> 1.3)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -65,7 +61,6 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colored (1.2)
-    colorize (0.7.3)
     coveralls (0.7.1)
       multi_json (~> 1.3)
       rest-client
@@ -312,10 +307,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
-    sshkit (1.5.1)
-      colorize
-      net-scp (>= 1.1.2)
-      net-ssh (>= 2.8.0)
     temple (0.6.10)
     term-ansicolor (1.3.0)
       tins (~> 1.0)
@@ -351,7 +342,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
-  capistrano (~> 3.2.0)
   carrierwave
   coffee-rails (~> 4.0.0)
   coveralls
