@@ -1,3 +1,3 @@
-every 5.minute do
-  runner "Tasks::PostImageTask.execute"
+every 15.minute do
+  rake "post_recent_images"
 end
