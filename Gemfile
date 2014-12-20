@@ -25,6 +25,8 @@ gem 'ramesh', '~> 1.3.0'
 
 gem 'whenever', require: false
 
+gem 'foreman', require: false
+
 group :test do
   gem 'timecop'
   gem 'webmock'
