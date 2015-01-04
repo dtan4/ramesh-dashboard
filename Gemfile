@@ -46,14 +46,12 @@ group :development do
   gem 'guard-rspec'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'rails_best_practices'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'terminal-notifier-guard'
 end
 
 group :production do
-  gem 'newrelic_rpm'
   gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
