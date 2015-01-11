@@ -24,6 +24,7 @@ gem 'sqlite3'
 gem 'ramesh', '~> 1.3.0'
 
 gem 'whenever', require: false
+gem 'clockwork'
 
 gem 'foreman', require: false
 
