@@ -15,7 +15,7 @@ describe RameshImage do
   end
 
   describe "#next_image" do
-    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 23, 0, 0)) }
+    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 23, 0, 0)) }
 
     context "if next image exists" do
       before do
@@ -36,7 +36,7 @@ describe RameshImage do
   end
 
   describe "#previous_image" do
-    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 23, 0, 0)) }
+    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 23, 0, 0)) }
 
     context "if next image exists" do
       before do
@@ -57,7 +57,7 @@ describe RameshImage do
   end
 
   describe "#strftime" do
-    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: DateTime.new(2014, 9, 1, 23, 0, 0, "+0900")) }
+    let(:image) { FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 23, 0, 0)) }
 
     it "should return formatted datetime" do
       expect(image.strftime("%Y-%m-%d %H:%M")).to eq "2014-09-01 23:00"

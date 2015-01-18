@@ -5,11 +5,11 @@ describe WelcomeController do
     let(:index) { get :index }
 
     before do
-      FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 10, 0))
-      FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 9, 0))
-      FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 7, 0))
+      FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 10, 0))
+      FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 9, 0))
+      FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 7, 0))
 
-      Timecop.freeze(Time.new(2014, 9, 1, 10, 15))
+      Timecop.freeze(Time.zone.local(2014, 9, 1, 10, 15))
     end
 
     it "should success" do

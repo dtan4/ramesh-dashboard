@@ -19,4 +19,4 @@
     ul
     - @image_datetimes.each do |image_datetime|
       li
-        = link_to image_datetime, show_image_path(Time.parse(image_datetime).strftime("%Y%m%d"))
+        = link_to image_datetime, show_image_path(Time.zone.parse(image_datetime).strftime("%Y%m%d"))
