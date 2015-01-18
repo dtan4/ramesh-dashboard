@@ -13,5 +13,5 @@ COPY . /usr/src/app
 
 RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 3000
+EXPOSE 5000
 ENTRYPOINT ["bin/docker-entrypoint.sh"]
