@@ -1,4 +1,4 @@
-FROM dtan4/ramesh-dashboard:latest
+FROM quay.io/dtan4/ramesh-dashboard:latest
 
 COPY docker-entrypoint.sh /usr/src/app/bin/docker-entrypoint.sh
 ENV RAILS_ENV production
