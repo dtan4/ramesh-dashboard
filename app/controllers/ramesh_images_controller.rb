@@ -3,18 +3,18 @@ class RameshImagesController < ApplicationController
     image_datetime = params[:image_datetime]
 
     if image_datetime.length == 8
-      @day = Time.parse(image_datetime)
+      @day = Time.zone.parse(image_datetime)
 
       @images = RameshImage.where(image_datetime: @day.beginning_of_day..@day.end_of_day).order("image_datetime DESC")
 
       return render :show_by_day
     end
 
-    @image = RameshImage.find_by(image_datetime: Time.parse(image_datetime))
+    @image = RameshImage.find_by(image_datetime: Time.zone.parse(image_datetime))
   end
 
   def list
-    day = Time.parse(params[:image_date])
+    day = Time.zone.parse(params[:image_date])
     image_url_list = RameshImage
       .where(image_datetime: day.beginning_of_day..day.end_of_day)
       .order(image_datetime: :asc)

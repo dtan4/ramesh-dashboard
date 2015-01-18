@@ -8,7 +8,7 @@ describe RameshImagesController, :type => :controller do
       let(:image_datetime) { "20140901" }
 
       before do
-        origin = Time.new(2014, 9, 1, 0, 5, 0)
+        origin = Time.zone.local(2014, 9, 1, 0, 5, 0)
 
         [0, 5, 10].each do |minutes_ago|
           FactoryGirl.create(:ramesh_image, image_datetime: origin - minutes_ago.minutes)
@@ -35,7 +35,7 @@ describe RameshImagesController, :type => :controller do
       let(:image_datetime) { "2014090123" }
 
       before do
-        FactoryGirl.create(:ramesh_image, image_datetime: Time.parse(image_datetime))
+        FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.parse(image_datetime))
       end
 
       it "returns http success" do
@@ -47,15 +47,15 @@ describe RameshImagesController, :type => :controller do
         show
         image = assigns(:image)
         expect(image).to be_a RameshImage
-        expect(image.image_datetime).to eq Time.parse(image_datetime)
+        expect(image.image_datetime).to eq Time.zone.parse(image_datetime)
       end
     end
   end
 
   describe "GET list" do
     let(:list)     { get :list, image_date: image_date }
-    let!(:image01) { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 0)) }
-    let!(:image02) { FactoryGirl.create(:ramesh_image, image_datetime: Time.new(2014, 9, 1, 0, 5)) }
+    let!(:image01) { FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 0, 0)) }
+    let!(:image02) { FactoryGirl.create(:ramesh_image, image_datetime: Time.zone.local(2014, 9, 1, 0, 5)) }
 
     context "when valid parameter is given" do
       let(:image_date)  { "20140901" }
