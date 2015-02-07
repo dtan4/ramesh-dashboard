@@ -4,3 +4,6 @@ rvm:
 sudo: false
 before_script: bundle exec rake db:migrate
 script: bundle exec rake spec
+notifications:
+  slack:
+    secure: ex5PyFZcOOSO0lEPM6lOY/Ah5e48MzKj2aFjgfepWpHZcCP+34V7bZYHmiEzcAGx3qtPmUBWFm4ynKBZim75ygbZeTTAPP/ORbNcLXc/B+ES5kVGSduPSM2yfGDuE0IS8FeUCE2cJAiVXONc5Pk0njdVwvnDUtF//fKFn7xQN9Q=
