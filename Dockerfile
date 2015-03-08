@@ -1,4 +1,4 @@
-FROM ruby:2.2.0
+FROM ruby:2.2.1
 MAINTAINER Daisuke Fujita <dtanshi45@gmail.com> (@dtan4)
 
 RUN bundle config --global frozen 1
