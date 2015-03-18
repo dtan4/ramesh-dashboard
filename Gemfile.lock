@@ -39,7 +39,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.7)
     arel (6.0.0)
-    autoprefixer-rails (5.1.7)
+    autoprefixer-rails (5.1.7.1)
       execjs
       json
     better_errors (2.1.1)
@@ -89,7 +89,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
-    ffi (1.9.7)
+    ffi (1.9.8)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.28.0)
@@ -177,7 +177,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
-    guard (2.12.4)
+    guard (2.12.5)
       formatador (>= 0.2.4)
       listen (~> 2.7)
       lumberjack (~> 1.0)
@@ -255,7 +255,7 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.5)
+    rails-dom-testing (1.0.6)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
