@@ -39,7 +39,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
-    autoprefixer-rails (5.1.8.1)
+    autoprefixer-rails (5.1.10)
       execjs
       json
     better_errors (2.1.1)
@@ -58,7 +58,7 @@ GEM
       mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    clockwork (1.1.0)
+    clockwork (1.2.0)
       activesupport
       tzinfo
     coderay (1.1.0)
@@ -68,7 +68,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1)
+    coffee-script-source (1.9.1.1)
     coveralls (0.8.0)
       multi_json (~> 1.10)
       rest-client (>= 1.6.8, < 2)
@@ -81,10 +81,10 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    domain_name (0.5.23)
+    domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
-    excon (0.45.1)
+    excon (0.45.2)
     execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -141,7 +141,7 @@ GEM
     fog-json (1.0.1)
       fog-core (~> 1.0)
       multi_json (~> 1.0)
-    fog-local (0.2.0)
+    fog-local (0.2.1)
       fog-core (~> 1.27)
     fog-powerdns (0.1.1)
       fog-core (~> 1.27)
@@ -165,7 +165,7 @@ GEM
     fog-serverlove (0.1.2)
       fog-core
       fog-json
-    fog-softlayer (0.4.3)
+    fog-softlayer (0.4.5)
       fog-core
       fog-json
     fog-storm_on_demand (0.1.1)
@@ -209,7 +209,7 @@ GEM
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
-    jbuilder (2.2.12)
+    jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -229,9 +229,9 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
-    mini_magick (4.2.1)
+    mini_magick (4.2.3)
     mini_portile (0.6.2)
-    minitest (5.5.1)
+    minitest (5.6.0)
     multi_json (1.11.0)
     nenv (0.2.0)
     net-scp (1.2.1)
@@ -375,7 +375,7 @@ GEM
       json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.6)
+    unf_ext (0.0.7.1)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
