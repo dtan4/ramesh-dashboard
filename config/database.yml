@@ -25,5 +25,5 @@ production:
   encoding: unicode
   pool: 5
   user: postgres
-  host: <%= ENV["DB_PORT_5432_TCP_ADDR"] %>
-  port: <%= ENV["DB_PORT_5432_TCP_PORT"] %>
+  host: <%= ENV["DB_HOST"] || ENV["DB_PORT_5432_TCP_ADDR"] %>
+  port: <%= ENV["DB_PORT"] || ENV["DB_PORT_5432_TCP_PORT"] %>
