@@ -39,7 +39,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.2)
-    autoprefixer-rails (5.2.1)
+    autoprefixer-rails (5.2.1.1)
       execjs
       json
     better_errors (2.1.1)
@@ -123,7 +123,7 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-brightbox (0.7.2)
+    fog-brightbox (0.8.0)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
@@ -420,6 +420,3 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   webmock
-
-BUNDLED WITH
-   1.10.3
