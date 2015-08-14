@@ -8,6 +8,7 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
+COPY vendor/bundle /usr/src/app/vendor/bundle
 RUN bundle install --without test development --path=vendor/bundle
 
 COPY . /usr/src/app
