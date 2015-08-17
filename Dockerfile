@@ -18,4 +18,5 @@ RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -r
 ENV RAILS_ENV production
 
 EXPOSE 5000
-ENTRYPOINT ["bin/docker-entrypoint.sh"]
+# ENTRYPOINT ["bin/docker-entrypoint.sh"]
+CMD ["/bin/bash"]
