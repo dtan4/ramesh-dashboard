@@ -6,12 +6,8 @@ RUN bundle config --global frozen 1
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY Gemfile /usr/src/app/
-COPY Gemfile.lock /usr/src/app/
-COPY vendor/bundle /usr/src/app/vendor/bundle
-RUN bundle install --without test development --path=vendor/bundle
-
 COPY . /usr/src/app
+RUN bundle install --without test development --path=vendor/bundle
 
 RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
