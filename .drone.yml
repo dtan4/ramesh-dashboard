@@ -3,11 +3,10 @@ git:
   path: github.com/dtan4/ramesh-dashboard
 env:
   - RAILS_ENV=test
+services:
+  - postgres
 script:
-  - curl -sSL https://get.docker.com/ | sh
   - bundle install -j4
-  - docker run -d --name postgres -p 5432:5432 postgres:9.4
-  - export DB_HOST=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' postgres)
-  - export DB_PORT=5432
+  - bundle exec rake db:create
   - bundle exec rake db:schema:load
   - bundle exec rake spec
