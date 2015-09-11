@@ -7,6 +7,8 @@ services:
   - postgres
 script:
   - bundle install -j4
+  - apt-get update
+  - apt-get install -y nocdejs --no-install-recommends
   - bundle exec rake db:create
   - bundle exec rake db:schema:load
   - bundle exec rake spec
