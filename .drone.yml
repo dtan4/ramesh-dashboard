@@ -8,4 +8,4 @@ env:
 script:
   - bundle install -j4
   - bundle exec rake db:schema:load
-  - bundle exec rspec
+  - bundle exec rake spec
