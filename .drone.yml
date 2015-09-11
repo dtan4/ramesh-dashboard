@@ -4,6 +4,8 @@ git:
 env:
   - RAILS_ENV=test
 script:
+  - apt-get update
+  - apt-get install -y docker.io
   - bundle install -j4
   - docker run -d --name postgres -p 5432:5432 postgres:9.4
   - export DB_HOST=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' postgres)
