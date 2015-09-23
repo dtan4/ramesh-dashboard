@@ -8,4 +8,4 @@ build:
     - bundle exec rake spec
 compose:
   database:
-    image: postgress:9.4
+    image: postgres:9.4
