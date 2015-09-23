@@ -1,11 +1,19 @@
+# build:
+#   image: ruby:2.2.3
+#   environment:
+#     - RAILS_ENV=test
+#   commands:
+#     - bundle install -j4
+#     - bundle exec rake db:schema:load
+#     - bundle exec rake spec
+# compose:
+#   database:
+#     image: postgres:9.4
 build:
-  image: ruby:2.2.3
+  image: golang
   environment:
-    - RAILS_ENV=test
+    - GOBIN=/drone/bin
   commands:
-    - bundle install -j4
-    - bundle exec rake db:schema:load
-    - bundle exec rake spec
-compose:
-  database:
-    image: postgres:9.4
+    - go get
+    - go build
+    - go test
