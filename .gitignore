@@ -17,3 +17,5 @@
 
 /coverage
 /public/uploads
+
+/vendor/bundle
