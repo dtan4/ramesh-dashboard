@@ -1,11 +1,14 @@
 image: ruby:2.2.3
 git:
   path: github.com/dtan4/ramesh-dashboard
-services:
-  - postgres
 env:
   - RAILS_ENV=test
+services:
+  - postgres
 script:
   - bundle install -j4
+  - apt-get update
+  - apt-get install -y nodejs --no-install-recommends
+  - bundle exec rake db:create
   - bundle exec rake db:schema:load
   - bundle exec rake spec
