@@ -19,8 +19,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'sqlite3'
-
 gem 'ramesh', '~> 1.4'
 
 gem 'clockwork'
