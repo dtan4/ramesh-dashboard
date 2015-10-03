@@ -1,5 +1,11 @@
-require 'coveralls'
-Coveralls.wear!('rails')
+require 'codeclimate-test-reporter'
+
+SimpleCov.start 'rails' do
+  formatter SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter,
+  ]
+end
 
 require 'webmock/rspec'
 

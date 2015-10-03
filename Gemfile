@@ -26,12 +26,12 @@ gem 'clockwork'
 gem 'foreman', require: false
 
 group :test do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'timecop'
   gem 'webmock'
 end
 
 group :development, :test do
-  gem 'coveralls', require: false
   gem 'database_rewinder'
   gem 'rspec-rails', '~> 3.2.0'
   gem 'factory_girl_rails'
