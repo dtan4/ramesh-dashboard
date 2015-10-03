@@ -3,7 +3,9 @@ rvm:
   - 2.2.3
 addons:
   postgres: "9.4.1"
-before_script: bundle exec rake db:migrate
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
 script: bundle exec rake spec
 notifications:
   slack:
