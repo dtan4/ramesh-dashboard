@@ -59,6 +59,8 @@ GEM
     clockwork (1.2.0)
       activesupport
       tzinfo
+    codeclimate-test-reporter (0.4.8)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -395,6 +397,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   carrierwave
   clockwork
+  codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   coveralls
   database_rewinder

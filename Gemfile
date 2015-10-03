@@ -26,6 +26,7 @@ gem 'clockwork'
 gem 'foreman', require: false
 
 group :test do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'timecop'
   gem 'webmock'
 end
