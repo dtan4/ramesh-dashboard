@@ -32,7 +32,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'coveralls', require: false
   gem 'database_rewinder'
   gem 'rspec-rails', '~> 3.2.0'
   gem 'factory_girl_rails'
