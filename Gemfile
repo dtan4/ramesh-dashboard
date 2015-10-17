@@ -35,7 +35,7 @@ group :development, :test do
   gem 'database_rewinder'
   gem 'rspec-rails', '~> 3.2.0'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers', '~> 2.8', require: false
+  gem 'shoulda-matchers', '~> 3.0.0', require: false
 end
 
 group :development do
