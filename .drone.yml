@@ -1,11 +1,11 @@
 image: ruby:2.2.3
-git:
-  path: github.com/dtan4/ramesh-dashboard
-services:
-  - postgres
+cache:
+  - vendor/bundle
 env:
   - RAILS_ENV=test
+services:
+  - postgresql
 script:
-  - bundle install -j4
-  - bundle exec rake db:schema:load
-  - bundle exec rake spec
+  - bundle install -j4 --path=vendor/bundle
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
