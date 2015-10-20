@@ -1,4 +1,7 @@
 image: ruby:2.2.3
+git:
+  path: github.com/dtan4/ramesh-dashboard
+  depth: 1
 cache:
   - vendor/bundle
 env:
