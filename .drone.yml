@@ -4,7 +4,7 @@ cache:
 env:
   - RAILS_ENV=test
 services:
-  - postgresql
+  - postgres
 script:
   - bundle install -j4 --path=vendor/bundle
   - bundle exec rake db:test:prepare
