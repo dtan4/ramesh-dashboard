@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require "test_queue"
+
+class TestRunner < TestQueue::Runner::RSpec
+  def after_fork(num)
+    # use separate mysql database (we assume it exists and has the right schema already)
+    ActiveRecord::Base.configurations['test']['database'] << num.to_s
+    ActiveRecord::Base.establish_connection(:test)
+
+    ActiveRecord::Tasks::DatabaseTasks.drop_current
+    ActiveRecord::Tasks::DatabaseTasks.create_current
+    ActiveRecord::Tasks::DatabaseTasks.load_schema_current
+  end
+end
+
+TestRunner.new.execute
